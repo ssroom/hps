@@ -27,17 +27,16 @@ def scrape_freeproxy_world(max_pages=15):
             if resp.status_code != 200:
                 continue
 
-            # 使用正则匹配 Markdown 表格行
-            lines = resp.text.splitlines()
-            for line in lines:
-                if re.match(r'^\|\s*[\d\.]', line):  # 匹配 IP 开头的表格行
+            # 匹配 Markdown 表格行（当前网站结构）
+            for line in resp.text.splitlines():
+                if re.match(r'^\|\s*[\d\.]', line.strip()):   # 以 IP 开头的行
                     cols = [col.strip() for col in line.split('|') if col.strip()]
                     if len(cols) >= 3:
                         ip = cols[0]
                         port = cols[1]
                         country = cols[2] if len(cols) > 2 else "Unknown"
                         
-                        if re.match(r'^\d+\.\d+\.\d+\.\d+$', ip) and port.isdigit():
+                        if re.match(r'^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$', ip) and port.isdigit():
                             proxies.append({
                                 "ip": ip,
                                 "port": int(port),
@@ -47,40 +46,35 @@ def scrape_freeproxy_world(max_pages=15):
                                 "last_checked": datetime.now().isoformat()
                             })
             print(f"  第 {page} 页抓取完成 → 当前累计 {len(proxies)} 条")
-            time.sleep(1.3)
+            time.sleep(1.2)
         except Exception as e:
             print(f"第 {page} 页错误: {e}")
             break
     return proxies
 
 def scrape_proxyscrape():
-    print("正在抓取 ProxyScrape...")
+    print("正在抓取 ProxyScrape (HTTPS)...")
     try:
-        # 新地址尝试
-        urls = [
-            "https://api.proxyscrape.com/v4/free-proxy-list/get?protocol=http&ssl=yes&limit=9999",
-            "https://proxyscrape.com/free-proxy-list"
-        ]
-        for url in urls:
-            resp = requests.get(url, headers=headers, timeout=15)
-            if resp.status_code == 200:
-                # 如果是文本列表
-                if '\n' in resp.text and ':' in resp.text:
-                    lines = resp.text.strip().splitlines()
-                    proxies = []
-                    for line in lines:
-                        if ':' in line and not line.startswith('#'):
-                            parts = line.strip().split(':')
-                            if len(parts) >= 2 and parts[0].count('.') == 3:
-                                proxies.append({
-                                    "ip": parts[0],
-                                    "port": int(parts[1].split()[0]),
-                                    "country": "Unknown",
-                                    "protocol": "https",
-                                    "source": "proxyscrape"
-                                })
-                    print(f"ProxyScrape 抓取到 {len(proxies)} 条")
-                    return proxies
+        # 正确 API 参数
+        url = "https://api.proxyscrape.com/v4/free-proxy-list/get?request=display_proxies&proxy_format=ipport&format=text&limit=9999&ssl=yes"
+        resp = requests.get(url, headers=headers, timeout=20)
+        if resp.status_code == 200 and resp.text.strip():
+            proxies = []
+            for line in resp.text.strip().splitlines():
+                line = line.strip()
+                if ':' in line and not line.startswith('#'):
+                    # 过滤只保留 https 支持的（部分是 socks，这里简单处理）
+                    if re.match(r'^\d+\.\d+\.\d+\.\d+:\d+$', line):
+                        ip, port = line.split(':', 1)
+                        proxies.append({
+                            "ip": ip,
+                            "port": int(port),
+                            "country": "Unknown",
+                            "protocol": "https",
+                            "source": "proxyscrape"
+                        })
+            print(f"ProxyScrape 抓取到 {len(proxies)} 条")
+            return proxies
     except Exception as e:
         print(f"ProxyScrape 错误: {e}")
     return []
@@ -102,7 +96,7 @@ def check_proxy(proxy):
 def main():
     start_time = time.time()
     
-    all_proxies = scrape_freeproxy_world(max_pages=10)   # 先抓10页，够用
+    all_proxies = scrape_freeproxy_world(max_pages=10)   # 10页已足够多
     all_proxies.extend(scrape_proxyscrape())
     
     # 去重
@@ -115,8 +109,8 @@ def main():
     
     print(f"\n去重后共有 {len(unique_proxies)} 个唯一 HTTPS 代理")
     
-    # 验证
-    print("开始验证可用代理...")
+    # 验证可用性
+    print("开始并发验证可用代理...")
     working = []
     with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
         results = list(executor.map(check_proxy, unique_proxies))
