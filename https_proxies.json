@@ -1,0 +1,92 @@
+[
+  {
+    "ip": "47.85.51.197",
+    "port": 1080,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "proxyscrape",
+    "latency": 204,
+    "status": "working"
+  },
+  {
+    "ip": "152.70.91.193",
+    "port": 40000,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "proxyscrape",
+    "latency": 1898,
+    "status": "working"
+  },
+  {
+    "ip": "94.131.118.129",
+    "port": 1082,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "proxyscrape",
+    "latency": 8393,
+    "status": "working"
+  },
+  {
+    "ip": "92.255.110.140",
+    "port": 1080,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "proxyscrape",
+    "latency": 5594,
+    "status": "working"
+  },
+  {
+    "ip": "77.110.107.80",
+    "port": 1080,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "proxyscrape",
+    "latency": 4154,
+    "status": "working"
+  },
+  {
+    "ip": "20.127.128.70",
+    "port": 8080,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "proxyscrape",
+    "latency": 8888,
+    "status": "working"
+  },
+  {
+    "ip": "38.180.121.135",
+    "port": 10808,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "proxyscrape",
+    "latency": 3231,
+    "status": "working"
+  },
+  {
+    "ip": "86.104.72.219",
+    "port": 1082,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "proxyscrape",
+    "latency": 9835,
+    "status": "working"
+  },
+  {
+    "ip": "86.104.72.219",
+    "port": 1081,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "proxyscrape",
+    "latency": 3018,
+    "status": "working"
+  },
+  {
+    "ip": "47.77.216.82",
+    "port": 1080,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "proxyscrape",
+    "latency": 3737,
+    "status": "working"
+  }
+]
