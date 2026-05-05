@@ -9,37 +9,39 @@ import threading
 
 OUTPUT_JSON = "https_proxies.json"
 OUTPUT_TXT = "https_proxies.txt"
-MAX_WORKERS = 50          # 并发检查数量，根据自己网络调整
-TEST_URL = "https://httpbin.org/ip"  # 用于验证代理
-TIMEOUT = 10
+MAX_WORKERS = 60
+TEST_URL = "https://httpbin.org/ip"
+TIMEOUT = 8
 
-headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
-
-proxies_list = []
-lock = threading.Lock()
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36"
+}
 
 def scrape_freeproxy_world():
-    print("正在抓取 freeproxy.world...")
+    print("正在抓取 freeproxy.world (所有 HTTPS)...")
     proxies = []
     page = 1
-    while True:
+    while page <= 30:   # 最多抓30页，避免无限循环
         url = f"https://www.freeproxy.world/?type=https&page={page}"
         try:
             resp = requests.get(url, headers=headers, timeout=15)
             soup = BeautifulSoup(resp.text, 'html.parser')
-            table = soup.find("table")
-            if not table:
-                break
-            rows = table.find_all("tr")[1:]
-            if not rows:
-                break
-            for row in rows:
+            
+            # 新结构适配
+            rows = soup.select("table tr")
+            for row in rows[1:]:   # 跳过表头
                 cols = row.find_all("td")
-                if len(cols) < 4:
+                if len(cols) < 2:
                     continue
-                ip = cols[0].text.strip()
+                ip_tag = cols[0].find("a") or cols[0]
+                ip = ip_tag.text.strip()
                 port = cols[1].text.strip()
-                country = cols[2].text.strip()
+                
+                country = "Unknown"
+                if len(cols) > 2:
+                    country_tag = cols[2].find("a")
+                    country = country_tag.text.strip() if country_tag else cols[2].text.strip()
+                
                 if ip and port and port.isdigit():
                     proxies.append({
                         "ip": ip,
@@ -48,25 +50,28 @@ def scrape_freeproxy_world():
                         "protocol": "https",
                         "source": "freeproxy.world"
                     })
-            print(f"  第 {page} 页抓取完成 ({len(rows)} 条)")
+            print(f"  第 {page} 页 → {len(rows)-1} 条")
+            if len(rows) < 10:  # 最后一页
+                break
             page += 1
-            time.sleep(1.5)
+            time.sleep(1.2)
         except Exception as e:
-            print(f"freeproxy.world 第 {page} 页错误: {e}")
+            print(f"freeproxy.world 错误: {e}")
             break
     return proxies
 
 def scrape_proxyscrape():
-    print("正在抓取 ProxyScrape API...")
+    print("正在抓取 ProxyScrape...")
     try:
-        url = "https://api.proxyscrape.com/v4/free-proxy-list/get?protocol=http&ssl=yes&anonymity=all&limit=2000&timeout=10000"
+        # 更新后的 API
+        url = "https://api.proxyscrape.com/v4/free-proxy-list/get?protocol=http&ssl=yes&anonymity=all&limit=9999&timeout=8000"
         resp = requests.get(url, timeout=15)
-        if resp.status_code == 200:
-            lines = resp.text.strip().split('\n')
+        if resp.status_code == 200 and resp.text.strip():
+            lines = [line.strip() for line in resp.text.splitlines() if ':' in line]
             proxies = []
             for line in lines:
                 if ':' in line:
-                    ip, port = line.strip().split(':')
+                    ip, port = line.split(':', 1)
                     proxies.append({
                         "ip": ip,
                         "port": int(port),
@@ -80,78 +85,28 @@ def scrape_proxyscrape():
         print(f"ProxyScrape 错误: {e}")
     return []
 
-def scrape_spys_one():
-    print("正在抓取 spys.one...")
-    proxies = []
-    urls = [
-        "https://spys.one/en/https-ssl-proxy/",
-        "https://spys.one/en/free-proxy-list/"
-    ]
-    for url in urls:
-        try:
-            resp = requests.get(url, headers=headers, timeout=15)
-            soup = BeautifulSoup(resp.text, 'html.parser')
-            # spys.one 表格结构较复杂，这里提取常见模式
-            rows = soup.find_all("tr", class_=lambda x: x and "spy1x" in x or "spy1xx" in x)
-            for row in rows:
-                tds = row.find_all("td")
-                if len(tds) >= 3:
-                    proxy_text = tds[0].text.strip()
-                    if ':' in proxy_text:
-                        ip, port = proxy_text.split(':')
-                        country_td = tds[2] if len(tds) > 2 else None
-                        country = country_td.text.strip()[:2] if country_td else "Unknown"
-                        if ip and port.isdigit():
-                            proxies.append({
-                                "ip": ip,
-                                "port": int(port),
-                                "country": country,
-                                "protocol": "https",
-                                "source": "spys.one"
-                            })
-            time.sleep(2)
-        except Exception as e:
-            print(f"spys.one 错误: {e}")
-    print(f"spys.one 抓取到 {len(proxies)} 条")
-    return proxies
-
 def check_proxy(proxy):
-    """并发检查单个代理"""
     proxy_url = f"http://{proxy['ip']}:{proxy['port']}"
     try:
         start = time.time()
-        resp = requests.get(TEST_URL, proxies={"http": proxy_url, "https": proxy_url}, 
-                           timeout=TIMEOUT, headers=headers)
-        if resp.status_code == 200:
+        r = requests.get(TEST_URL, proxies={"http": proxy_url, "https": proxy_url},
+                        timeout=TIMEOUT, headers=headers)
+        if r.status_code in (200, 403, 429):   # 403/429也算部分可用
             latency = round((time.time() - start) * 1000)
-            with lock:
-                proxy["latency"] = latency
-                proxy["last_checked"] = datetime.now().isoformat()
-                proxy["status"] = "working"
+            proxy["latency"] = latency
+            proxy["last_checked"] = datetime.now().isoformat()
+            proxy["status"] = "working"
             return proxy
     except:
         pass
     return None
 
-def check_all_proxies(proxies):
-    print(f"开始并发检查 {len(proxies)} 个代理（最大并发 {MAX_WORKERS}）...")
-    working = []
-    with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-        results = executor.map(check_proxy, proxies)
-        for r in results:
-            if r:
-                working.append(r)
-                print(f"✅ 可用: {r['ip']}:{r['port']}  ({r.get('latency', '?')}ms)")
-    return working
-
-# ====================== 主程序 ======================
-if __name__ == "__main__":
+def main():
     start_time = time.time()
     
-    all_proxies = []
-    all_proxies.extend(scrape_freeproxy_world())
+    all_proxies = scrape_freeproxy_world()
     all_proxies.extend(scrape_proxyscrape())
-    all_proxies.extend(scrape_spys_one())
+    # spys.one 暂时放弃（反爬太强）
     
     # 去重
     seen = OrderedDict()
@@ -164,16 +119,22 @@ if __name__ == "__main__":
     print(f"\n去重后共有 {len(unique_proxies)} 个唯一 HTTPS 代理")
     
     # 检查可用性
-    working_proxies = check_all_proxies(unique_proxies)
+    print("开始验证可用代理...")
+    working = []
+    with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+        results = list(executor.map(check_proxy, unique_proxies))
+        working = [r for r in results if r]
     
-    # 保存文件
+    # 保存
     with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
-        json.dump(working_proxies, f, ensure_ascii=False, indent=2)
+        json.dump(working, f, ensure_ascii=False, indent=2)
     
     with open(OUTPUT_TXT, "w") as f:
-        for p in working_proxies:
+        for p in working:
             f.write(f"{p['ip']}:{p['port']}\n")
     
-    print(f"\n✅ 完成！可用 HTTPS 代理: {len(working_proxies)} 个")
-    print(f"耗时: {round(time.time()-start_time, 1)} 秒")
-    print(f"文件已保存：{OUTPUT_JSON} 和 {OUTPUT_TXT}")
+    print(f"\n✅ 完成！可用 HTTPS 代理: {len(working)} 个")
+    print(f"总耗时: {round(time.time()-start_time, 1)} 秒")
+
+if __name__ == "__main__":
+    main()
