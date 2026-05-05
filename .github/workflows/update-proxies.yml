@@ -2,7 +2,7 @@ name: Update HTTPS Proxies
 
 on:
   schedule:
-    - cron: '30 2 * * *'   # 每天凌晨 2:30 执行一次
+    - cron: '30 2 */2 * *'   # 每2天凌晨 2:30 执行一次
   workflow_dispatch:        # 支持手动触发
 
 permissions:
