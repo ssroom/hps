@@ -1,48 +1,33 @@
 [
   {
+    "ip": "194.59.247.34",
+    "port": 10808,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "proxyscrape",
+    "latency": 1703,
+    "status": "working",
+    "last_checked": "2026-05-05T01:28:19.472949"
+  },
+  {
     "ip": "47.85.51.197",
     "port": 1080,
     "country": "Unknown",
     "protocol": "https",
     "source": "proxyscrape",
-    "latency": 204,
-    "status": "working"
+    "latency": 3969,
+    "status": "working",
+    "last_checked": "2026-05-05T01:28:21.752524"
   },
   {
-    "ip": "152.70.91.193",
-    "port": 40000,
-    "country": "Unknown",
-    "protocol": "https",
-    "source": "proxyscrape",
-    "latency": 1898,
-    "status": "working"
-  },
-  {
-    "ip": "94.131.118.129",
-    "port": 1082,
-    "country": "Unknown",
-    "protocol": "https",
-    "source": "proxyscrape",
-    "latency": 8393,
-    "status": "working"
-  },
-  {
-    "ip": "92.255.110.140",
+    "ip": "45.146.243.133",
     "port": 1080,
     "country": "Unknown",
     "protocol": "https",
     "source": "proxyscrape",
-    "latency": 5594,
-    "status": "working"
-  },
-  {
-    "ip": "77.110.107.80",
-    "port": 1080,
-    "country": "Unknown",
-    "protocol": "https",
-    "source": "proxyscrape",
-    "latency": 4154,
-    "status": "working"
+    "latency": 12345,
+    "status": "working",
+    "last_checked": "2026-05-05T01:28:31.607434"
   },
   {
     "ip": "20.127.128.70",
@@ -50,35 +35,9 @@
     "country": "Unknown",
     "protocol": "https",
     "source": "proxyscrape",
-    "latency": 8888,
-    "status": "working"
-  },
-  {
-    "ip": "38.180.121.135",
-    "port": 10808,
-    "country": "Unknown",
-    "protocol": "https",
-    "source": "proxyscrape",
-    "latency": 3231,
-    "status": "working"
-  },
-  {
-    "ip": "86.104.72.219",
-    "port": 1082,
-    "country": "Unknown",
-    "protocol": "https",
-    "source": "proxyscrape",
-    "latency": 9835,
-    "status": "working"
-  },
-  {
-    "ip": "86.104.72.219",
-    "port": 1081,
-    "country": "Unknown",
-    "protocol": "https",
-    "source": "proxyscrape",
-    "latency": 3018,
-    "status": "working"
+    "latency": 8249,
+    "status": "working",
+    "last_checked": "2026-05-05T01:28:30.302461"
   },
   {
     "ip": "47.77.216.82",
@@ -86,7 +45,658 @@
     "country": "Unknown",
     "protocol": "https",
     "source": "proxyscrape",
-    "latency": 3737,
-    "status": "working"
+    "latency": 292,
+    "status": "working",
+    "last_checked": "2026-05-05T01:28:40.793578"
+  },
+  {
+    "ip": "77.110.107.80",
+    "port": 1080,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "proxyscrape",
+    "latency": 10867,
+    "status": "working",
+    "last_checked": "2026-05-05T01:29:06.703122"
+  },
+  {
+    "ip": "38.180.121.135",
+    "port": 10808,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "proxyscrape",
+    "latency": 9319,
+    "status": "working",
+    "last_checked": "2026-05-05T01:29:06.663435"
+  },
+  {
+    "ip": "194.150.220.163",
+    "port": 1082,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "proxyscrape",
+    "latency": 3234,
+    "status": "working",
+    "last_checked": "2026-05-05T01:30:05.207743"
+  },
+  {
+    "ip": "167.71.222.124",
+    "port": 10001,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "proxyscrape",
+    "latency": 12487,
+    "status": "working",
+    "last_checked": "2026-05-05T01:31:45.993585"
+  },
+  {
+    "ip": "45.143.99.15",
+    "port": 41000,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "proxyscrape",
+    "latency": 12056,
+    "status": "working",
+    "last_checked": "2026-05-05T01:31:55.152766"
+  },
+  {
+    "ip": "59.46.216.131",
+    "port": 30001,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "proxyscrape",
+    "latency": 5400,
+    "status": "working",
+    "last_checked": "2026-05-05T01:33:24.721591"
+  },
+  {
+    "ip": "145.241.117.33",
+    "port": 8888,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 2334,
+    "status": "working",
+    "last_checked": "2026-05-05T01:34:07.890224"
+  },
+  {
+    "ip": "103.109.96.35",
+    "port": 6321,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 6154,
+    "status": "working",
+    "last_checked": "2026-05-05T01:34:13.158402"
+  },
+  {
+    "ip": "113.160.132.26",
+    "port": 8080,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 2889,
+    "status": "working",
+    "last_checked": "2026-05-05T01:34:10.281261"
+  },
+  {
+    "ip": "154.64.232.35",
+    "port": 8080,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 1401,
+    "status": "working",
+    "last_checked": "2026-05-05T01:34:09.135606"
+  },
+  {
+    "ip": "196.204.83.232",
+    "port": 1981,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 1755,
+    "status": "working",
+    "last_checked": "2026-05-05T01:34:11.264268"
+  },
+  {
+    "ip": "150.107.140.238",
+    "port": 3128,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 8549,
+    "status": "working",
+    "last_checked": "2026-05-05T01:34:18.348538"
+  },
+  {
+    "ip": "147.45.186.28",
+    "port": 3128,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 19446,
+    "status": "working",
+    "last_checked": "2026-05-05T01:34:29.727599"
+  },
+  {
+    "ip": "62.60.149.161",
+    "port": 3128,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 4394,
+    "status": "working",
+    "last_checked": "2026-05-05T01:34:16.886923"
+  },
+  {
+    "ip": "20.164.75.153",
+    "port": 8080,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 2364,
+    "status": "working",
+    "last_checked": "2026-05-05T01:34:15.126458"
+  },
+  {
+    "ip": "200.174.198.32",
+    "port": 8888,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 9149,
+    "status": "working",
+    "last_checked": "2026-05-05T01:34:22.307943"
+  },
+  {
+    "ip": "103.168.254.26",
+    "port": 1111,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 3307,
+    "status": "working",
+    "last_checked": "2026-05-05T01:34:18.511781"
+  },
+  {
+    "ip": "131.222.251.91",
+    "port": 8080,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 10097,
+    "status": "working",
+    "last_checked": "2026-05-05T01:34:25.418397"
+  },
+  {
+    "ip": "120.28.199.66",
+    "port": 8085,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 7644,
+    "status": "working",
+    "last_checked": "2026-05-05T01:34:23.105459"
+  },
+  {
+    "ip": "103.154.152.104",
+    "port": 8090,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 3300,
+    "status": "working",
+    "last_checked": "2026-05-05T01:34:18.816754"
+  },
+  {
+    "ip": "131.222.251.145",
+    "port": 8080,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 5253,
+    "status": "working",
+    "last_checked": "2026-05-05T01:34:20.851405"
+  },
+  {
+    "ip": "103.171.245.104",
+    "port": 1080,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 8868,
+    "status": "working",
+    "last_checked": "2026-05-05T01:34:25.209883"
+  },
+  {
+    "ip": "38.19.39.109",
+    "port": 999,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 7024,
+    "status": "working",
+    "last_checked": "2026-05-05T01:34:23.705511"
+  },
+  {
+    "ip": "103.155.130.134",
+    "port": 8082,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 9304,
+    "status": "working",
+    "last_checked": "2026-05-05T01:34:26.869159"
+  },
+  {
+    "ip": "174.114.24.95",
+    "port": 3128,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 4761,
+    "status": "working",
+    "last_checked": "2026-05-05T01:34:26.633475"
+  },
+  {
+    "ip": "86.104.74.110",
+    "port": 1081,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 1337,
+    "status": "working",
+    "last_checked": "2026-05-05T01:34:23.223680"
+  },
+  {
+    "ip": "180.191.32.166",
+    "port": 8081,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 15084,
+    "status": "working",
+    "last_checked": "2026-05-05T01:34:37.982252"
+  },
+  {
+    "ip": "195.158.8.123",
+    "port": 3128,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 7938,
+    "status": "working",
+    "last_checked": "2026-05-05T01:34:32.254132"
+  },
+  {
+    "ip": "139.162.153.201",
+    "port": 3128,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 1241,
+    "status": "working",
+    "last_checked": "2026-05-05T01:34:27.875461"
+  },
+  {
+    "ip": "181.143.181.35",
+    "port": 8080,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 2013,
+    "status": "working",
+    "last_checked": "2026-05-05T01:34:28.883453"
+  },
+  {
+    "ip": "103.172.23.182",
+    "port": 1080,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 6008,
+    "status": "working",
+    "last_checked": "2026-05-05T01:34:33.086311"
+  },
+  {
+    "ip": "164.138.205.232",
+    "port": 8080,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 6858,
+    "status": "working",
+    "last_checked": "2026-05-05T01:34:34.508877"
+  },
+  {
+    "ip": "202.29.215.78",
+    "port": 8080,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 14376,
+    "status": "working",
+    "last_checked": "2026-05-05T01:34:42.252231"
+  },
+  {
+    "ip": "157.66.16.33",
+    "port": 8787,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 13898,
+    "status": "working",
+    "last_checked": "2026-05-05T01:34:42.782051"
+  },
+  {
+    "ip": "45.65.227.161",
+    "port": 999,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 8038,
+    "status": "working",
+    "last_checked": "2026-05-05T01:34:44.694153"
+  },
+  {
+    "ip": "85.112.71.208",
+    "port": 8080,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 13224,
+    "status": "working",
+    "last_checked": "2026-05-05T01:34:51.207300"
+  },
+  {
+    "ip": "103.138.185.81",
+    "port": 83,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 9425,
+    "status": "working",
+    "last_checked": "2026-05-05T01:34:49.440791"
+  },
+  {
+    "ip": "103.102.12.105",
+    "port": 8080,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 10592,
+    "status": "working",
+    "last_checked": "2026-05-05T01:34:51.083564"
+  },
+  {
+    "ip": "103.151.177.221",
+    "port": 8080,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 13707,
+    "status": "working",
+    "last_checked": "2026-05-05T01:34:54.471696"
+  },
+  {
+    "ip": "189.127.167.136",
+    "port": 8080,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 7306,
+    "status": "working",
+    "last_checked": "2026-05-05T01:34:48.220374"
+  },
+  {
+    "ip": "131.222.247.152",
+    "port": 8080,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 3227,
+    "status": "working",
+    "last_checked": "2026-05-05T01:34:45.362135"
+  },
+  {
+    "ip": "203.177.237.138",
+    "port": 8282,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 7384,
+    "status": "working",
+    "last_checked": "2026-05-05T01:34:50.027599"
+  },
+  {
+    "ip": "119.18.147.139",
+    "port": 10001,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 10153,
+    "status": "working",
+    "last_checked": "2026-05-05T01:34:52.935716"
+  },
+  {
+    "ip": "80.78.128.94",
+    "port": 8080,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 4221,
+    "status": "working",
+    "last_checked": "2026-05-05T01:34:52.441918"
+  },
+  {
+    "ip": "201.139.115.206",
+    "port": 8082,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 14102,
+    "status": "working",
+    "last_checked": "2026-05-05T01:35:06.693753"
+  },
+  {
+    "ip": "76.169.128.104",
+    "port": 8080,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 6931,
+    "status": "working",
+    "last_checked": "2026-05-05T01:35:02.492815"
+  },
+  {
+    "ip": "173.212.245.136",
+    "port": 8888,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 11377,
+    "status": "working",
+    "last_checked": "2026-05-05T01:35:08.753300"
+  },
+  {
+    "ip": "61.29.96.146",
+    "port": 8000,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 13260,
+    "status": "working",
+    "last_checked": "2026-05-05T01:35:11.502788"
+  },
+  {
+    "ip": "203.76.98.21",
+    "port": 45958,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 11394,
+    "status": "working",
+    "last_checked": "2026-05-05T01:35:09.680243"
+  },
+  {
+    "ip": "217.77.102.18",
+    "port": 3128,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 2742,
+    "status": "working",
+    "last_checked": "2026-05-05T01:35:01.272552"
+  },
+  {
+    "ip": "38.127.172.34",
+    "port": 37234,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 2097,
+    "status": "working",
+    "last_checked": "2026-05-05T01:35:02.886683"
+  },
+  {
+    "ip": "45.239.48.98",
+    "port": 999,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 3192,
+    "status": "working",
+    "last_checked": "2026-05-05T01:35:06.079564"
+  },
+  {
+    "ip": "34.71.229.255",
+    "port": 3128,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 364,
+    "status": "working",
+    "last_checked": "2026-05-05T01:35:03.454302"
+  },
+  {
+    "ip": "115.127.95.82",
+    "port": 8080,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 15653,
+    "status": "working",
+    "last_checked": "2026-05-05T01:35:20.723319"
+  },
+  {
+    "ip": "160.19.18.204",
+    "port": 8080,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 1957,
+    "status": "working",
+    "last_checked": "2026-05-05T01:35:07.713713"
+  },
+  {
+    "ip": "38.49.143.218",
+    "port": 999,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 3713,
+    "status": "working",
+    "last_checked": "2026-05-05T01:35:09.640160"
+  },
+  {
+    "ip": "200.39.152.161",
+    "port": 999,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 13626,
+    "status": "working",
+    "last_checked": "2026-05-05T01:35:19.638856"
+  },
+  {
+    "ip": "203.175.102.22",
+    "port": 3125,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 8317,
+    "status": "working",
+    "last_checked": "2026-05-05T01:35:14.397314"
+  },
+  {
+    "ip": "103.161.69.252",
+    "port": 2698,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 7198,
+    "status": "working",
+    "last_checked": "2026-05-05T01:35:13.417015"
+  },
+  {
+    "ip": "20.27.13.35",
+    "port": 8561,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 12660,
+    "status": "working",
+    "last_checked": "2026-05-05T01:35:19.882264"
+  },
+  {
+    "ip": "152.32.132.190",
+    "port": 7890,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 1934,
+    "status": "working",
+    "last_checked": "2026-05-05T01:35:09.648299"
+  },
+  {
+    "ip": "1.231.81.166",
+    "port": 3128,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 1763,
+    "status": "working",
+    "last_checked": "2026-05-05T01:35:10.588532"
+  },
+  {
+    "ip": "103.157.200.126",
+    "port": 3128,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 2643,
+    "status": "working",
+    "last_checked": "2026-05-05T01:35:15.554224"
+  },
+  {
+    "ip": "148.230.4.241",
+    "port": 999,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 857,
+    "status": "working",
+    "last_checked": "2026-05-05T01:35:14.644667"
+  },
+  {
+    "ip": "181.119.97.24",
+    "port": 999,
+    "country": "Unknown",
+    "protocol": "https",
+    "source": "free-proxy-list.net",
+    "latency": 1063,
+    "status": "working",
+    "last_checked": "2026-05-05T01:35:14.939834"
   }
 ]
